@@ -1,0 +1,31 @@
+.footer {
+  width: 100%;
+  > h2 {
+    color: var(--white);
+    font-size: 28px;
+    margin: 0 0 48px 0;
+  }
+  &-details {
+    &-content {
+      margin: 0 0 20px 0;
+      > h4 {
+        margin: 0 0 10px 0;
+        font-size: 12px;
+        color: var(--cyan-dark);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      &-email::before {
+        content: "luisqrja@gmail.com";
+        color: inherit;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    width: 50%;
+    padding: 0 15px 0 48px;
+  }
+}

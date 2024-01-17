@@ -1,0 +1,197 @@
+.header {
+  width: 100%;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  padding: 10px 15px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: 0.5s ease-in-out all;
+  .burger-button {
+    width: 56px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    svg {
+      font-size: 1.8rem;
+      color: #7f7f7f;
+    }
+    &.is-active {
+      z-index: 150;
+      border: 0;
+      svg {
+        color: var(--white);
+      }
+    }
+  }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 55px;
+    background: var(--white);
+    width: 100%;
+    padding: 0 15px;
+    z-index: 99;
+    &-effect-circle {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: var(--dark-two);
+      top: -90vh;
+      right: -90vw;
+      border-radius: 50%;
+      transition: 0.65s ease all;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &.is-active {
+        top: 0;
+        right: 0;
+        transform: scale(1.5);
+        .menu-item {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          opacity: 1;
+        }
+      }
+    }
+
+    &-item {
+      padding: 0 20px;
+      display: none;
+      opacity: 0;
+      height: 56px;
+      overflow: hidden;
+      transition: height 0.4s ease-out;
+    }
+    &-link {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      transition: all 0.4s ease-out;
+      outline: none;
+      &:hover,
+      &.router-link-active {
+        color: var(--green-two);
+      }
+    }
+  }
+  &.fixed {
+    .menu {
+      &-link {
+        &.is-active {
+          color: var(--green-two);
+        }
+      }
+    }
+  }
+}
+//Desktop
+@media screen and (min-width: 992px) {
+  .header {
+    background: transparent;
+    top: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .burger-button {
+      display: none;
+    }
+    .menu {
+      position: static;
+      background: transparent;
+      max-width: 1100px;
+      margin: 0 auto;
+      &-effect-circle {
+        overflow: visible;
+        max-height: unset;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        position: unset;
+        background: transparent;
+        border-radius: 0;
+        width: auto;
+        height: auto;
+        .menu-item {
+          display: block;
+        }
+        &.is-active {
+          top: unset;
+          right: unset;
+          transform: unset;
+        }
+      }
+      &-item {
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        width: 150px;
+        opacity: 1;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          background: var(--white);
+          transition: 0.4s ease-out all;
+        }
+        &::before {
+          top: 0;
+          left: -150px;
+        }
+        &::after {
+          bottom: 0;
+          right: -150px;
+        }
+        &:hover {
+          &::before {
+            left: 0;
+          }
+          &::after {
+            right: 0;
+          }
+        }
+      }
+      &-link {
+        padding: 0 20px;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.fixed {
+      top: 0;
+      background: var(--white);
+      max-width: unset;
+      margin: 0;
+      .menu {
+        max-width: 1100px;
+        margin: 0 auto;
+        &-link {
+          color: var(--dark-three);
+        }
+      }
+    }
+  }
+}

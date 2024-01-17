@@ -1,0 +1,65 @@
+.portafolio {
+  padding: 80px 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+  &-wrapper {
+    padding: 0;
+    &.grid {
+      grid-gap: 10px;
+    }
+  }
+  .item {
+    overflow: hidden;
+    &-image {
+      img {
+        height: 170px;
+      }
+    }
+    &-information {
+      padding: 10px 20px;
+      background: var(--dark-two);
+      h3 {
+        font-size: 18px;
+        color: var(--white);
+        font-weight: 600;
+      }
+      &-made {
+        margin: 10px 0 0 0;
+        h4 {
+          font-size: 16px;
+          color: var(--white);
+          margin: 0 0 5px 0;
+        }
+      }
+    }
+  }
+}
+//Tablet
+@media screen and (min-width: 768px) {
+  .portafolio {
+    .item {
+      &-image {
+        img {
+          height: 185px;
+        }
+      }
+    }
+    &-wrapper {
+      &.grid {
+        grid-gap: 20px 16px;
+      }
+    }
+  }
+}
+//Desktop
+@media screen and (min-width: 992px) {
+  .portafolio {
+    .item {
+      &-image {
+        img {
+          height: 180px;
+        }
+      }
+    }
+  }
+}
