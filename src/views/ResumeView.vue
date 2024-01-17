@@ -68,7 +68,7 @@ const infoEducation = ref([
     address: "Perú, Lima, Lurín",
   },
   {
-    year: "2017 - Presente",
+    year: "2017 - 2022",
     typeEducation: "Educación técnico superior - Computación e Informática",
     description: `Estudié en el instituto tecnico llamado SENATI,
                       gracias a una beca de la institución PRONABEC obtuve una beca de
@@ -94,8 +94,8 @@ const infoEducation = ref([
     address: "Perú, Lima, San Juan de Miraflores",
   },
   {
-    year: "30 de Febrero 2020 - 25 de Julio 2020",
-    typeEducation: "Especialización",
+    year: "Julio 2023 - Noviembre 2023",
+    typeEducation: "Bootcamp de Front-end Avanzado",
     description: `Lleve una especialización en desarrollo web Front-end Avanzado, lleve el
                       bootcamp con los amigos de Codigo Facilito, con grandes profesores de
                       de la industria. Aprendí muchas técnicas, dentro de todo me gustaron mucho las
